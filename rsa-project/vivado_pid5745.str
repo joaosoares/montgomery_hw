@@ -1,0 +1,132 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 5745
+
+Current time: 	11/8/17 5:17:10 PM CET
+Time zone: 	Central European Time (Europe/Brussels)
+
+OS: CentOS Linux release 7.4.1708 (Core) 
+Version: 3.10.0-693.5.2.el7.x86_64
+Architecture: amd64
+Available processors (cores): 4
+
+DISPLAY: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	r0692167
+User home directory: /users/students/r0692167
+User working directory: /users/students/r0692167/Downloads/multiplier/rsa-project
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado
+RDI Data directory: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/data
+RDI Bin directory: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin
+
+Vivado preferences path: /users/students/r0692167/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /users/students/r0692167/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	153 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,881 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 31 MB (+29750kb) [00:00:04]
+// [Engine Memory]: 4,881 MB (+4966218kb) [00:00:04]
+// Opening Vivado Project: rsa_project/rsa_project.xpr. Version: Vivado v2016.2 
+// bL:g (cv:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project rsa_project/rsa_project.xpr 
+// [GUI Memory]: 36 MB (+3736kb) [00:00:08]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 4,895 MB. GUI used memory: 22 MB. Current time: 11/8/17 5:17:12 PM CET
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project rsa_project/rsa_project.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 54 MB (+16781kb) [00:00:10]
+// [GUI Memory]: 57 MB (+230kb) [00:00:11]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: rsa_project; location: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project; part: xc7z010clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 5935.637 ; gain = 86.465 ; free physical = 4526 ; free virtual = 22372 
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 198 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v)]", 1, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v)]", 1, true, false, false, false, true, false); // z:k (G:JPanel, cv:JFrame) - Popup Trigger - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v)]", 1); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut - adder (adder.v)]", 2, false); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut - adder (adder.v)]", 2, false, false, false, false, false, true); // z:k (G:JPanel, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 241, 122); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 171, 529); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 329, 503); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 252, 555); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 296, 190); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 266, 257); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 265, 258, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 265, 258); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 249, 267); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 249, 267, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 249, 267); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 243, 285); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 243, 285, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 243, 285); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 248, 276); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 248, 276, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 248, 276); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 315); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 315, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 262, 315); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 308); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 308, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 262, 308); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 324); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 324, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 262, 324); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 324); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 262, 324, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 262, 324); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 254, 346); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 254, 346, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 254, 346); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 253, 357); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 252, 391); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 254, 362); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 254, 362, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 254, 362); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 245, 391); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 245, 391, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 245, 391); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 185, 431); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 185, 431, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 185, 431); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 126, 474); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 123, 460); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 123, 460, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 123, 460); // bH:N (JPanel:JComponent, cv:JFrame)
+// [GUI Memory]: 60 MB (+500kb) [00:03:56]
