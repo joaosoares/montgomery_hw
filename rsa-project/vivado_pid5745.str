@@ -130,3 +130,377 @@ selectCodeEditor("adder.v", 123, 460); // bH:N (JPanel:JComponent, cv:JFrame)
 selectCodeEditor("adder.v", 123, 460, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
 selectCodeEditor("adder.v", 123, 460); // bH:N (JPanel:JComponent, cv:JFrame)
 // [GUI Memory]: 60 MB (+500kb) [00:03:56]
+// Elapsed time: 366 seconds
+selectCodeEditor("adder.v", 309, 386); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 175, 541); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 212, 347); // bH:N (JPanel:JComponent, cv:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 5); // z:k (G:JPanel, cv:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 6); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_adder (tb_adder.v)]", 7, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_adder (tb_adder.v)]", 7, true, false, false, false, false, true); // z:k (G:JPanel, cv:JFrame) - Double Click - Node
+selectCodeEditor("tb_adder.v", 164, 430); // bH:N (JPanel:JComponent, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut - adder (adder.v)]", 2, false); // z:k (G:JPanel, cv:JFrame)
+// [GUI Memory]: 65 MB (+2389kb) [00:10:20]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut - adder (adder.v)]", 2, false, false, false, false, false, true); // z:k (G:JPanel, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 202, 529); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 130, 510); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 59 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D:b
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_montgomery (hweval_montgomery.v)]", 3, true, false, false, false, false, true); // z:k (G:JPanel, cv:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_montgomery (hweval_montgomery.v)]", 3, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut - adder (adder.v)]", 2, false); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut - adder (adder.v)]", 2, false, false, false, false, false, true); // z:k (G:JPanel, cv:JFrame) - Double Click
+// [GUI Memory]: 69 MB (+649kb) [00:11:27]
+selectCodeEditor("adder.v", 276, 234); // bH:N (JPanel:JComponent, cv:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Generate Block Design]", 8, false); // x:Y (w:G, cv:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // x:Y (w:G, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af:JMenuItem (am:JPopupMenu, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// f:bL (cv:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'tb_adder' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM_LOG
+// TclEventType: LAUNCH_SIM
+// Tcl Message: xvlog -m64 --relax -prj tb_adder_vlog.prj INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module adder INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module tb_adder INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '0' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// HOptionPane Error: " ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.<br> (Run Simulation)"
+// a:a (cv:JFrame): Critical Messages: addNotify
+// 'e' command handler elapsed time: 3 seconds
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cv:JFrame)
+selectCodeEditor("adder.v", 274, 374); // bH:N (JPanel:JComponent, cv:JFrame)
+selectButton(PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION, "run_implementation"); // y:JideButton (CommandBar:DockableBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bL:g (cv:JFrame):  Starting Design Runs : addNotify
+selectButton("PAResourceQtoS.RunImplementation_THERE_NO_NETLIST_AVAILABLE_OK_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Nov  8 17:28:55 2017] Launched synth_1... Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/synth_1/runme.log [Wed Nov  8 17:28:55 2017] Launched impl_1... Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bL:g (cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,992 MB. GUI used memory: 28 MB. Current time: 11/8/17 5:28:57 PM CET
+// TclEventType: RUN_FAILED
+// ap:G (cv:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 20 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ap:G)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ap:G (cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, launch_simulation. , [USF-XSim 62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log' file for more information.. ]", 2, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, launch_simulation. , [USF-XSim 62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log' file for more information.. ]", 2, false, false, false, false, false, true); // al:k (JViewport:JComponent, cv:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, launch_simulation. , [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.. ]", 3, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, launch_simulation. , [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.. ]", 3, false, false, false, false, false, true); // al:k (JViewport:JComponent, cv:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-448] named port connection 'shift' does not exist for instance 'dut' of module 'adder' [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/hweval_adder.v:23]. ]", 5, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-448] named port connection 'shift' does not exist for instance 'dut' of module 'adder' [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/hweval_adder.v:23]. ]", 5, false, false, false, false, false, true); // al:k (JViewport:JComponent, cv:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-448] named port connection 'shift' does not exist for instance 'dut' of module 'adder' [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/hweval_adder.v:23]. ]", 5, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-448] named port connection 'shift' does not exist for instance 'dut' of module 'adder' [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/hweval_adder.v:23]. ]", 5, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 232, 308); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 214, 335); // bH:N (JPanel:JComponent, cv:JFrame)
+typeControlKey(null, null, 'z');
+selectCodeEditor("adder.v", 264, 209); // bH:N (JPanel:JComponent, cv:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 42 seconds
+selectCodeEditor("adder.v", 120, 184); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 129, 92, false, false, false, true, false); // bH:N (JPanel:JComponent, cv:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // af:JMenuItem (am:JPopupMenu, cv:JFrame)
+selectCodeEditor("adder.v", 82, 171); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("adder.v", 345, 350); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("adder.v", 408, 311); // bH:N (JPanel:JComponent, cv:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION, "run_implementation"); // y:JideButton (CommandBar:DockableBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bL:g (cv:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.RunImplementation_THERE_NO_NETLIST_AVAILABLE_OK_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// bL:g (cv:JFrame):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 
+// Tcl Message: [Wed Nov  8 17:31:02 2017] Launched synth_1... Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/synth_1/runme.log [Wed Nov  8 17:31:02 2017] Launched impl_1... Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/impl_1/runme.log 
+// 'c' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bL:g (cv:JFrame)
+// [GUI Memory]: 73 MB (+170kb) [00:14:38]
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ap:G (cv:JFrame): Implementation Completed: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,017 MB. GUI used memory: 31 MB. Current time: 11/8/17 5:32:37 PM CET
+// Elapsed time: 101 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ap:G)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// bL:g (cv:JFrame):  Open Implemented Design : addNotify
+// Tcl Message: open_run impl_1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 5,189 MB (+67337kb) [00:15:44]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,189 MB. GUI used memory: 30 MB. Current time: 11/8/17 5:32:48 PM CET
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Xgd.load filename: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/data/parts/xilinx/zynq/devint/zynq/xc7z010/xc7z010.xgd; ZipEntry: xc7z010_detail.xgd elapsed time: 0.6s
+// [GUI Memory]: 80 MB (+3584kb) [00:15:46]
+// TclEventType: DESIGN_NEW
+// Device: addNotify
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 111 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2016.2 INFO: [Device 21-403] Loading part xc7z010clg400-1 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Parsing XDC File [/tmp/.Xil_r0692167/Vivado-5745-pc-klas4-5.esat.kuleuven.be/dcp/hweval_adder.xdc] Finished Parsing XDC File [/tmp/.Xil_r0692167/Vivado-5745-pc-klas4-5.esat.kuleuven.be/dcp/hweval_adder.xdc] Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.19 . Memory (MB): peak = 6203.340 ; gain = 3.000 ; free physical = 4161 ; free virtual = 22173 
+// Tcl Message: Restored from archive | CPU: 0.190000 secs | Memory: 3.585922 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.19 . Memory (MB): peak = 6203.340 ; gain = 3.000 ; free physical = 4161 ; free virtual = 22173 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// TclEventType: POWER_UPDATED
+// 'dG' command handler elapsed time: 14 seconds
+// Device view-level: 0.0
+// TclEventType: POWER_UPDATED
+// [GUI Memory]: 84 MB (+446kb) [00:15:54]
+// Elapsed time: 14 seconds
+dismissDialog("Open Implemented Design"); // bL:g (cv:JFrame)
+// TclEventType: TIMING_SUMMARY_UPDATED
+// [GUI Memory]: 90 MB (+1642kb) [00:15:55]
+// RouteApi::initDelayMediator elapsed time: 7.8s
+// [Engine Memory]: 5,608 MB (+167075kb) [00:16:03]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,608 MB. GUI used memory: 70 MB. Current time: 11/8/17 5:33:07 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 5,630 MB. GUI used memory: 69 MB. Current time: 11/8/17 5:33:52 PM CET
+// [GUI Memory]: 95 MB (+286kb) [00:19:31]
+// Elapsed time: 295 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cv:JFrame)
+closeTask("Implementation", "Implemented Design", "DesignTask.RESULTS_ANALYSIS");
+// G:be (cv:JFrame): Confirm Close: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, G:be)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,630 MB. GUI used memory: 55 MB. Current time: 11/8/17 5:37:55 PM CET
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 5,630 MB. GUI used memory: 55 MB. Current time: 11/8/17 5:37:55 PM CET
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: close_design 
+dismissDialog("Confirm Close"); // G:be (cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut - adder (adder.v)]", 2, false); // z:k (G:JPanel, cv:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_montgomery (hweval_montgomery.v)]", 3); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_montgomery (hweval_montgomery.v), montgomery_instance - montgomery (montgomery.v)]", 4, false); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_montgomery (hweval_montgomery.v), montgomery_instance - montgomery (montgomery.v)]", 4, false, false, false, false, false, true); // z:k (G:JPanel, cv:JFrame) - Double Click
+selectCodeEditor("montgomery.v", 297, 486); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 318, 326); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 181, 202); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 220, 280); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_adder.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "montgomery.v", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+// Elapsed time: 62 seconds
+selectCodeEditor("montgomery.v", 98, 291); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 80, 336); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 87, 314); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 455 seconds
+selectCodeEditor("montgomery.v", 237, 283); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 178, 304); // bH:N (JPanel:JComponent, cv:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_adder.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectCodeEditor("montgomery.v", 277, 234); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 247, 248); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 161, 290); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 159, 307); // bH:N (JPanel:JComponent, cv:JFrame)
+// [GUI Memory]: 102 MB (+2524kb) [00:31:22]
+// Elapsed time: 223 seconds
+selectCodeEditor("montgomery.v", 149, 274); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 163, 213); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 106, 312); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 120, 276); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 286 seconds
+selectCodeEditor("montgomery.v", 192, 382); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 193, 382, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("montgomery.v", 193, 382); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 149, 368); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 149, 368, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("montgomery.v", 149, 368); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 91 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "montgomery.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectCodeEditor("adder.v", 129, 135); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 156, 166); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 124, 157); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 171, 189); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 234, 321); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 234, 321, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // x:Y (w:G, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af:JMenuItem (am:JPopupMenu, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// f:bL (cv:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'tb_adder' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav' 
+// Tcl Message: xvlog -m64 --relax -prj tb_adder_vlog.prj INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module adder INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module tb_adder INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds 
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_adder_behav -key {Behavioral:sim_1:Functional:tb_adder} -tclbatch {tb_adder.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2016.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Tcl Message: source tb_adder.tcl 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_adder_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 6676.812 ; gain = 28.672 ; free physical = 3485 ; free virtual = 21600 
+// 'e' command handler elapsed time: 5 seconds
+dismissDialog("Run Simulation"); // f:bL (cv:JFrame)
+// Elapsed time: 27 seconds
+selectCodeEditor("tb_adder.v", 155, 235); // bH:N (JPanel:JComponent, cv:JFrame)
+// [GUI Memory]: 109 MB (+2092kb) [00:41:16]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 262, 376, false, false, false, true, false); // n:a (JViewport:JComponent, cv:JFrame) - Popup Trigger
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectMenuItem((HResource) null, "Full View"); // af:JMenuItem (am:JPopupMenu, cv:JFrame)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,642 MB. GUI used memory: 41 MB. Current time: 11/8/17 5:58:28 PM CET
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 414, 232); // n:a (JViewport:JComponent, cv:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 435, 215); // n:a (JViewport:JComponent, cv:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, "simulation_live_run_for_time"); // y:JideButton (CommandBar:DockableBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 38 MB. Current time: 11/8/17 5:58:35 PM CET
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run 40 ns 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 45 MB. Current time: 11/8/17 5:58:37 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 38 MB. Current time: 11/8/17 5:58:37 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 37 MB. Current time: 11/8/17 5:58:39 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 37 MB. Current time: 11/8/17 5:58:39 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 37 MB. Current time: 11/8/17 5:58:39 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 38 MB. Current time: 11/8/17 5:58:39 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 37 MB. Current time: 11/8/17 5:58:39 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 37 MB. Current time: 11/8/17 5:58:39 PM CET
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,647 MB. GUI used memory: 37 MB. Current time: 11/8/17 5:58:40 PM CET
+// Elapsed time: 107 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "adder.v", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+// Elapsed time: 34 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "montgomery.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectCodeEditor("montgomery.v", 197, 151); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 197, 388); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 192, 427); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 228, 354); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 214, 413); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 226, 377); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 219, 394); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 201 seconds
+selectCodeEditor("montgomery.v", 162, 316); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 162, 316, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("montgomery.v", 162, 316); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 162, 316, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("montgomery.v", 162, 316); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 163, 325); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 163, 325, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_adder.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "montgomery.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "adder.v", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectCodeEditor("adder.v", 189, 110); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 189, 110, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 189, 110); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 278, 162); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 189, 115); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("adder.v", 189, 115, false, false, false, false, true); // bH:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor("adder.v", 189, 115); // bH:N (JPanel:JComponent, cv:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "montgomery.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectCodeEditor("montgomery.v", 177, 316); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 187, 385); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("montgomery.v", 228, 186); // bH:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 33 seconds
+selectCodeEditor("montgomery.v", 243, 54); // bH:N (JPanel:JComponent, cv:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');

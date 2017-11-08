@@ -12,3 +12,14 @@
 start_gui
 open_project rsa_project/rsa_project.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+launch_runs impl_1
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+open_run impl_1
+close_design
+launch_simulation
+source tb_adder.tcl
+run 40 ns

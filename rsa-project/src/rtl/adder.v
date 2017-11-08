@@ -11,23 +11,79 @@ module adder(
     output wire [514:0] result,
     output wire         done    
     );
-
-    // To implement the montgomery multiplication algorithm, 
-    // a small change needs to be made in the input/output sizes of the adder.v
-    //
-    // Your adder's input and output size should be increased by 1-bit.
-    // In the end, you are going to add two 514-bit input and calculate a 515-bit output.
-    //
-    // A second alteration is needed to accomodate the shift into your design.
-    // The shift input is defined above for you.
-    //
-    // For this implementation, revisit your previous adder design, copy it here,
-    // and do alteration to make it compatible with the input/output size as defined above.
-    //
-    // The tb_adder.v and testvector generator script are already updated for the changes.
-
-    assign result = in_a + in_b;
-
-    assign done = 1'b1;
+    
+    reg [513:0] a, b;
+    wire [513:0] inv_b;
+//    reg b_neg_4;
+//    reg [127:0] b_neg_3, b_neg_2, b_neg_1, b_neg_0;
+    reg [514:0] reg_result;
+    wire [514:0] bitmask_sub;
+    reg c;
+    wire [128:0] add_out;
+    wire [128:0] sub_out;
+    reg [3:0] counter;
+    reg done_sig;
+    
+    // What impact does a 513-bit add operation have on the critical path of the design? 
+    
+    assign add_out = a[127:0] + b[127:0] + c;
+    assign inv_b = ~b;
+    assign sub_out = a[127:0] + inv_b[127:0] + c;
+       
+    always @(posedge clk) begin
+        if (resetn==1'b0)
+        begin
+            reg_result <= 0;
+            c <= 0;
+            a <= 0;
+            b <= 0;
+            counter <= 0;
+            done_sig <= 0;
+        end
+        else
+        begin
+            if (start == 1'b1)
+            begin
+                a <= in_a;
+                b <= in_b;
+                reg_result <= 0;
+                counter <= 0;
+                done_sig <= 0;
+                c <= subtract;
+            end
+            else
+            begin
+                if (counter != 4) begin
+                    if (subtract == 1'b0) begin
+                        reg_result <= {add_out[127:0], reg_result[513:128]};
+                        c <= add_out[128];
+                    end
+                    else begin
+                        reg_result <= {sub_out[127:0], reg_result[513:128]};
+                        c <= sub_out[128];
+                    end
+                end
+                else begin
+                    if (subtract == 1'b0) begin
+                        reg_result <= {add_out[2:0], reg_result[513:2]};
+                        c <= add_out[3];
+                    end
+                    else begin
+                        reg_result <= {sub_out[2:0], reg_result[513:2]};
+                        c <= sub_out[3];
+                    end
+                end
+               
+                a <= a>>128;
+                b <= b>>128;
+                if (counter == 4)
+                    done_sig <= 1;
+                else
+                    counter <= counter + 1;
+            end
+        end
+    end
+    assign result = reg_result;
+    assign done = done_sig;
 
 endmodule
