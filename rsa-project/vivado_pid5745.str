@@ -504,3 +504,12 @@ selectCodeEditor("montgomery.v", 228, 186); // bH:N (JPanel:JComponent, cv:JFram
 selectCodeEditor("montgomery.v", 243, 54); // bH:N (JPanel:JComponent, cv:JFrame)
 typeControlKey(null, null, 'z');
 typeControlKey(null, null, 'z');
+// Elapsed time: 345 seconds
+selectCodeEditor("montgomery.v", 212, 152); // bH:N (JPanel:JComponent, cv:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
