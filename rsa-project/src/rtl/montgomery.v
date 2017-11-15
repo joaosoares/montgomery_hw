@@ -22,57 +22,112 @@
 
 // This is an example "compute" module that computes an addition of two operands
 
-module montgomery(clk, rst, start, a, b, c, done);
+module montgomery(clk, resetn, start, a, b, m, c, done);
 input clk;
-input rst;		// reset 
+input resetn;		// reset 
 input start;	// start signal for an addition
 
-input [3:0] a, b;	// input operands
-output [4:0] c;	// output result
+input [511:0] a, b, m;	// input operands
+output [513:0] c;	// output result
 output done;		// done is 1 when an addition complets
 
-reg [1:0] state, nextstate;
+// Parameters
+parameter WIDTH = 512;
 
-wire [4:0] c_wire;
-reg [4:0] c;
-reg c_en;
+// Declare state register
+reg [2:0] state, nextstate;
 
+// Declare states
+parameter START = 0,
+    LOOP_START = 1,
+    LOOP_ADD_M = 2,
+    LOOP_SHIFT = 3,
+    SUB_COND = 4,
+    DONE = 5;
+
+// Datapath control in signals
+wire c0;
+
+// Datapath control out signals
+reg start_c, 
+    cond_add_b,
+    cond_add_m,
+    shift_c,
+    cond_sub_c;
+
+// Temporary registers
+reg [513:0] c_reg;
+reg [11:0] counter;
+
+// Next state update
 always @(posedge clk)
 begin
-	if(rst)
+	if(!resetn)
 		state <= 2'd0;
 	else 
 		state <= nextstate;
 end		
 
-assign c_wire = a + b;
-
-always @(posedge clk)
-begin
-	if(rst)
-		c <= 5'd0;
-	else if (c_en)
-		c <= c_wire;
-	else
-		c <= c;
-end
 
 // example state machine for computation flow 
 always @(*)
 begin
 	case(state)
-	2'd0: begin		// Idle state; Here the FSM waits for the start signal
-				c_en <= 1'b0;
-			end		
-	2'd1: begin		// write result in c
-				c_en <= 1'b1;
-			end
-	2'd2: begin		// set 'done' high
-				c_en <= 1'b0;
-			end
+	START:
+        begin        // Idle state; Here the FSM waits for the start signal
+            start_c <= 1'b1;
+            cond_add_b <= 1'b0;
+            cond_add_m <= 1'b0;
+            shift_c <= 1'b0;
+            cond_sub_c <= 1'b0;
+        end
+ 	LOOP_START:
+        begin        // Idle state; Here the FSM waits for the start signal
+            start_c <= 1'b0;
+            cond_add_b <= 1'b1;
+            cond_add_m <= 1'b0;
+            shift_c <= 1'b0;
+            cond_sub_c <= 1'b0;
+        end		
+ 	LOOP_ADD_M:
+        begin        // Idle state; Here the FSM waits for the start signal
+            start_c <= 1'b0;
+            cond_add_b <= 1'b0;
+            cond_add_m <= 1'b1;
+            shift_c <= 1'b0;
+            cond_sub_c <= 1'b0;
+        end
+     LOOP_SHIFT:
+        begin        // Idle state; Here the FSM waits for the start signal
+            start_c <= 1'b0;
+            cond_add_b <= 1'b0;
+            cond_add_m <= 1'b0;
+            shift_c <= 1'b1;
+            cond_sub_c <= 1'b0;
+        end        
+ 	SUB_COND:
+        begin        // Idle state; Here the FSM waits for the start signal
+            start_c <= 1'b0;
+            cond_add_b <= 1'b0;
+            cond_add_m <= 1'b0;
+            shift_c <= 1'b0;
+            cond_sub_c <= 1'b1;
+        end
+     DONE:
+        begin        // Idle state; Here the FSM waits for the start signal
+            start_c <= 1'b0;
+            cond_add_b <= 1'b0;
+            cond_add_m <= 1'b0;
+            shift_c <= 1'b0;
+            cond_sub_c <= 1'b0;
+            end        
 	default: begin		
-				c_en <= 1'b0;
-			end			
+            start_c <= 1'b0;
+            cond_add_b <= 1'b0;
+            cond_add_m <= 1'b0;
+            shift_c <= 1'b0;
+            cond_sub_c <= 1'b0;
+        end			
 	endcase
 end
 
@@ -80,20 +135,57 @@ end
 always @(*)
 begin
 	case(state)
-	2'd0: begin
-				if(start)
-					nextstate <= 2'd1;
-				else
-					nextstate <= 2'd0;
-			end
-	
-	2'd1: nextstate <= 2'd2;
-	2'd2: nextstate <= 2'd0;
-	default: nextstate <= 2'd0;	
+	START: begin
+       if (start)
+           nextstate <= LOOP_START;
+       else
+           nextstate <= START;
+    end
+    LOOP_START: begin
+        if (c0 == 0)
+            nextstate <= LOOP_SHIFT;
+        else
+            nextstate <= LOOP_ADD_M;
+        end
+    LOOP_ADD_M:
+        nextstate <= LOOP_SHIFT;
+    LOOP_SHIFT: begin
+        if (counter < WIDTH-1)
+            nextstate <= LOOP_START;
+        else
+            nextstate <= SUB_COND;
+        end
+    SUB_COND:
+        nextstate <= DONE;
+    DONE:
+        nextstate <= DONE;
+	default: nextstate <= START;	
 	endcase
 end
 
-assign done = (state==2'd2) ? 1'b1 : 1'b0;
+
+// Datapath
+always @(posedge clk)
+begin
+	if(start_c) begin
+		c_reg <= {WIDTH{1'd0}};
+		counter <= 12'd0;
+    end
+	else if (cond_add_b) begin
+	   if (a[counter]) begin
+	   
+	   end
+	   else begin
+	       
+	   end
+	end
+		
+	else
+		c <= c;
+end
+
+assign done = (state==DONE) ? 1'b1 : 1'b0;
+assign c0 = c[0];
 	
 endmodule
 
