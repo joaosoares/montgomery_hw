@@ -2,24 +2,28 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Nov  8 17:16:49 2017
-# Process ID: 5745
-# Current directory: /users/students/r0692167/Downloads/multiplier/rsa-project
+# Start of session at: Wed Nov 15 16:11:30 2017
+# Process ID: 3490
+# Current directory: /users/students/r0692167/Documents/DDP/multiplier/rsa-project
 # Command line: vivado rsa_project/rsa_project.xpr -tempDir /tmp
-# Log file: /users/students/r0692167/Downloads/multiplier/rsa-project/vivado.log
-# Journal file: /users/students/r0692167/Downloads/multiplier/rsa-project/vivado.jou
+# Log file: /users/students/r0692167/Documents/DDP/multiplier/rsa-project/vivado.log
+# Journal file: /users/students/r0692167/Documents/DDP/multiplier/rsa-project/vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project rsa_project/rsa_project.xpr
 update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_montgomery [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
 launch_simulation
-launch_runs impl_1
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
-open_run impl_1
-close_design
-launch_simulation
-source tb_adder.tcl
-run 40 ns
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top hweval_montgomery [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

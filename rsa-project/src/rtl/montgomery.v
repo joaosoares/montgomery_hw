@@ -22,7 +22,7 @@
 
 // This is an example "compute" module that computes an addition of two operands
 
-module compute_ddp(clk, rst, start, a, b, c, done);
+module montgomery(clk, rst, start, a, b, c, done);
 input clk;
 input rst;		// reset 
 input start;	// start signal for an addition

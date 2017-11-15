@@ -2,168 +2,54 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Nov  8 17:16:49 2017
-# Process ID: 5745
-# Current directory: /users/students/r0692167/Downloads/multiplier/rsa-project
+# Start of session at: Wed Nov 15 16:11:30 2017
+# Process ID: 3490
+# Current directory: /users/students/r0692167/Documents/DDP/multiplier/rsa-project
 # Command line: vivado rsa_project/rsa_project.xpr -tempDir /tmp
-# Log file: /users/students/r0692167/Downloads/multiplier/rsa-project/vivado.log
-# Journal file: /users/students/r0692167/Downloads/multiplier/rsa-project/vivado.jou
+# Log file: /users/students/r0692167/Documents/DDP/multiplier/rsa-project/vivado.log
+# Journal file: /users/students/r0692167/Documents/DDP/multiplier/rsa-project/vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project rsa_project/rsa_project.xpr
+INFO: [Project 1-313] Project file moved from '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/data/ip'.
-open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 5935.637 ; gain = 86.465 ; free physical = 4526 ; free virtual = 22372
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 5962.113 ; gain = 113.652 ; free physical = 4636 ; free virtual = 22570
 update_compile_order -fileset sources_1
+set_property top tb_montgomery [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
 launch_simulation
 INFO: [USF-XSim-27] Simulation object is 'sim_1'
-INFO: [USF-XSim-37] Inspecting design source files for 'tb_adder' in fileset 'sim_1'...
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
-xvlog -m64 --relax -prj tb_adder_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module adder
-INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_adder
-INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
 Vivado Simulator 2016.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_adder_behav xil_defaultlib.tb_adder xil_defaultlib.glbl -log elaborate.log 
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-426] cannot find port shift on this module [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v:38]
-ERROR: [VRFC 10-426] cannot find port shift on this module [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v:43]
-WARNING: [VRFC 10-278] actual bit length 514 differs from formal bit length 513 for port in_a [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v:44]
-WARNING: [VRFC 10-278] actual bit length 514 differs from formal bit length 513 for port in_b [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v:45]
-WARNING: [VRFC 10-278] actual bit length 515 differs from formal bit length 514 for port result [/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v:46]
+ERROR: [VRFC 10-2063] Module <montgomery> not found while processing module instance <montgomery_instance> [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:20]
 ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-INFO: [USF-XSim-99] Step results log file:'/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log' file for more information.
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log' file for more information.
 ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 5966.113 ; gain = 2.000 ; free physical = 4578 ; free virtual = 22557
 ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_runs impl_1
-[Wed Nov  8 17:28:55 2017] Launched synth_1...
-Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/synth_1/runme.log
-[Wed Nov  8 17:28:55 2017] Launched impl_1...
-Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1
-[Wed Nov  8 17:31:02 2017] Launched synth_1...
-Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/synth_1/runme.log
-[Wed Nov  8 17:31:02 2017] Launched impl_1...
-Run output will be captured here: /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/impl_1/runme.log
-open_run impl_1
-INFO: [Netlist 29-17] Analyzing 111 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2016.2
-INFO: [Device 21-403] Loading part xc7z010clg400-1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/tmp/.Xil_r0692167/Vivado-5745-pc-klas4-5.esat.kuleuven.be/dcp/hweval_adder.xdc]
-Finished Parsing XDC File [/tmp/.Xil_r0692167/Vivado-5745-pc-klas4-5.esat.kuleuven.be/dcp/hweval_adder.xdc]
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.19 . Memory (MB): peak = 6203.340 ; gain = 3.000 ; free physical = 4161 ; free virtual = 22173
-Restored from archive | CPU: 0.190000 secs | Memory: 3.585922 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.19 . Memory (MB): peak = 6203.340 ; gain = 3.000 ; free physical = 4161 ; free virtual = 22173
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 6329.691 ; gain = 297.672 ; free physical = 4045 ; free virtual = 22056
-close_design
-launch_simulation
-INFO: [USF-XSim-27] Simulation object is 'sim_1'
-INFO: [USF-XSim-37] Inspecting design source files for 'tb_adder' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
-xvlog -m64 --relax -prj tb_adder_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module adder
-INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_adder
-INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
-Vivado Simulator 2016.2
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_adder_behav xil_defaultlib.tb_adder xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.adder
-Compiling module xil_defaultlib.tb_adder
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_adder_behav
-
-****** Webtalk v2016.2 (64-bit)
-  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
-  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-
-source /users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_adder_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Wed Nov  8 17:57:45 2017...
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_adder_behav -key {Behavioral:sim_1:Functional:tb_adder} -tclbatch {tb_adder.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2016.2
-Time resolution is 1 ps
-source tb_adder.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-
-Addition with testvector 1
-result calculated=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-result expected  =000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002
-error            =000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002
-
-Addition with testvector 2
-result calculated=50ff75ae8b051b7e096660ba6b5f92d303babd6881aaec844325f1e20b14c9cc942dd53af27391df85a67bdc7851bda0029cbae3ab7543b3d859f6716bfecc4f0
-result expected  =50ff75ae8b051b7e096660ba6b5f92d303babd6881aaec844325f1e20b14c9cc942dd53af27391df85a67bdc7851bda0029cbae3ab7543b3d859f6716bfecc4f0
-error            =000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-result shifted   =0043fdd6ba2c146df8259982e9ad7e4b4c0eeaf5a206abb2110c97c7882c53273250b754ebc9ce477e1699ef71e146f6800a72eb8eadd50ecf6167d9c5affb313
-
-Subtraction with testvector 1
-result calculated=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-result expected  =000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-error            =000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-
-Subtraction with testvector 2
-result calculated=7faab323076a6b6a71bf04cb4484edae6174b535c1c8aae072f1b2ea0bccb608f6562358fafc4971af9d3939bbe3ae4e7d8ad3d9d19136a05386b4be79c3c59e5
-result expected  =7faab323076a6b6a71bf04cb4484edae6174b535c1c8aae072f1b2ea0bccb608f6562358fafc4971af9d3939bbe3ae4e7d8ad3d9d19136a05386b4be79c3c59e5
-error            =000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-result shifted   =0cfeaacc8c1da9ada9c6fc132d1213b6b985d2d4d70722ab81cbc6cba82f32d823d9588d63ebf125c6be74e4e6ef8eb939f62b4f674644da814e1ad2f9e70f167
-
-
-$finish called at time : 425 ns : File "/users/students/r0692167/Downloads/multiplier/rsa-project/src/rtl/tb_adder.v" Line 189
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_adder_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 6676.812 ; gain = 28.672 ; free physical = 3485 ; free virtual = 21600
-run 40 ns
+set_property top hweval_montgomery [current_fileset]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
