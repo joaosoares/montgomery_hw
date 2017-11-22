@@ -70,8 +70,8 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 	reg [513:0] c_reg, b_reg, m_reg;
 	reg [11:0] counter;
 	wire [514:0] adder_b_res,
-			    adder_m_res,
-			    subtractor_res;
+	adder_m_res,
+	subtractor_res;
 
 	adder adder_b(
 		clk,
@@ -155,7 +155,7 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 				cond_add_m <= 1'b1;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b0;
-                should_add_m <= 1'b0;
+				should_add_m <= 1'b0;
 			end
 			LOOP_ADD_M_WAIT:
 			begin // Idle state; Here the FSM waits for the start signal
@@ -267,39 +267,39 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 	// Datapath
 	always @(posedge clk)
 	begin
-	    // C reg modifications
-        if(start_c) begin
+		// C reg modifications
+		if(start_c) begin
 			c_reg <= {WIDTH{1'd0}};
 			b_reg <= {2'b0, in_b};
 			m_reg <= {2'b0, in_m};
 			counter <= 12'd0;
 		end
 		else if (shift_c) begin
-          // Shift C to divide by 2
-          c_reg <= c_reg >> 1;
-          // Increment counter
-          counter <= counter + 1;
-          // Drive down should_add_b
-          should_add_b <= 0;
-        end
-        else if (adder_b_done && should_add_b) begin
-          c_reg <= adder_b_res;
-        end
-        else if (adder_m_done && should_add_m) begin
-          c_reg <= adder_m_res;
-        end
-        else
-            c_reg <= c_reg;
+			// Shift C to divide by 2
+			c_reg <= c_reg >> 1;
+			// Increment counter
+			counter <= counter + 1;
+			// Drive down should_add_b
+			should_add_b <= 0;
+		end
+		else if (adder_b_done && should_add_b) begin
+			c_reg <= adder_b_res;
+		end
+		else if (adder_m_done && should_add_m) begin
+			c_reg <= adder_m_res;
+		end
+		else
+			c_reg <= c_reg;
 
-        if (cond_add_b) begin
-          should_add_b <= cur_a;
-        end
+		if (cond_add_b) begin
+			should_add_b <= cur_a;
+		end
 
-        if (cond_sub_c) begin
-          should_subtract <= c_reg >= m_reg;
-        end
+		if (cond_sub_c) begin
+			should_subtract <= c_reg >= m_reg;
+		end
 	end
-    
+
 	assign done = (state==DONE) ? 1'b1 : 1'b0;
 	assign cur_a = in_a[counter];
 	assign c0 = c_reg[0];
