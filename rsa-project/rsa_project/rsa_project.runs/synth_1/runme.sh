@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project/rsa_project.runs/synth_1'
+HD_PWD='/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log hweval_adder.vds -m64 -tempDir /tmp -mode batch -messageDb vivado.pb -notrace -source hweval_adder.tcl
+EAStep vivado -log hweval_montgomery.vds -m64 -tempDir /tmp -mode batch -messageDb vivado.pb -notrace -source hweval_montgomery.tcl

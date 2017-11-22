@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Nov  8 18:13:03 2017">
+<application name="pa" timeStamp="Wed Nov 22 15:50:29 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="e9e46029b11c4b31abe78fd666673ed1" type="ProjectID"/>
-<property name="ProjectIteration" value="3" type="ProjectIteration"/>
+<property name="ProjectIteration" value="4" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,78 +17,42 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="RunImplementation" value="2" type="JavaHandler"/>
-<property name="ShowView" value="1" type="JavaHandler"/>
-<property name="SimulationRun" value="2" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="1" type="JavaHandler"/>
+<property name="EditUndo" value="6" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
+<property name="RunImplementation" value="3" type="JavaHandler"/>
+<property name="RunSynthesis" value="14" type="JavaHandler"/>
+<property name="ShowView" value="4" type="JavaHandler"/>
+<property name="SimulationClose" value="13" type="JavaHandler"/>
+<property name="SimulationRestart" value="11" type="JavaHandler"/>
+<property name="SimulationRun" value="18" type="JavaHandler"/>
+<property name="SimulationRunAll" value="2" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="111" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, simulation_live_run_for_time" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="1" type="GuiResourceData"/>
 <property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, hweval_adder (hweval_adder.v" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, hweval_montgomery (hweval_montgomery.v" value="3" type="GuiResourceData"/>
 <property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="2" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 262, 376, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 414, 232" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 435, 215" value="1" type="GuiResourceData"/>
-<property name="adder.v, 124, 157" value="1" type="GuiResourceData"/>
-<property name="adder.v, 129, 135" value="1" type="GuiResourceData"/>
-<property name="adder.v, 156, 166" value="1" type="GuiResourceData"/>
-<property name="adder.v, 171, 189" value="1" type="GuiResourceData"/>
-<property name="adder.v, 189, 110" value="2" type="GuiResourceData"/>
-<property name="adder.v, 189, 110, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="adder.v, 189, 115" value="2" type="GuiResourceData"/>
-<property name="adder.v, 189, 115, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="adder.v, 234, 321" value="1" type="GuiResourceData"/>
-<property name="adder.v, 234, 321, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="adder.v, 278, 162" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 106, 312" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 120, 276" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 149, 274" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 149, 368" value="2" type="GuiResourceData"/>
-<property name="montgomery.v, 149, 368, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 159, 307" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 161, 290" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 162, 316" value="3" type="GuiResourceData"/>
-<property name="montgomery.v, 162, 316, false, false, false, false, true" value="2" type="GuiResourceData"/>
-<property name="montgomery.v, 163, 213" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 163, 325" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 163, 325, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 177, 316" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 178, 304" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 181, 202" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 187, 385" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 192, 382" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 192, 427" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 193, 382" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 193, 382, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 197, 151" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 197, 388" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 212, 152" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 214, 413" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 219, 394" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 220, 280" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 226, 377" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 228, 186" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 228, 354" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 237, 283" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 243, 54" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 247, 248" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 277, 234" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 297, 486" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 318, 326" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 80, 336" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 87, 314" value="1" type="GuiResourceData"/>
-<property name="montgomery.v, 98, 291" value="1" type="GuiResourceData"/>
-<property name="tb_adder.v, 155, 235" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Synthesis, Run Synthesis], 17, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sources_1, [HDL 9-806] Syntax error near counter. [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:275]. ], 6, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-1031] m is not declared [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:300]. ], 6, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-2576] procedural assignment to a non-register m_reg is not permitted [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:275]. ], 5, false" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 101, 167" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 115, 232" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 201, 320" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 221, 330" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 224, 309" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 235, 332" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 252, 149" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 273, 414" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 62, 441" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 64, 436" value="1" type="GuiResourceData"/>
+<property name="montgomery.v, 65, 420" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="10" type="GuiMode"/>
+<property name="GuiMode" value="13" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="6" type="TclMode"/>
+<property name="TclMode" value="9" type="TclMode"/>
 </item>
 </section>
 </application>
