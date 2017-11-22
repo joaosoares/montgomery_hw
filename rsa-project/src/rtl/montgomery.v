@@ -66,7 +66,9 @@ module montgomery(clk, resetn, start, a, b, m, c, done);
 	// Temporary registers
 	reg [513:0] c_reg;
 	reg [11:0] counter;
-	reg [511] a_i_times_b;
+	reg [511] adder_b_res,
+			  adder_m_res,
+			  subtractor_res;
 
 
 	input  wire         subtract,
@@ -83,8 +85,8 @@ module montgomery(clk, resetn, start, a, b, m, c, done);
 		1'b0,
 		1'b0,
 		c_reg,
-		a_i_times_b,
-		c_reg,
+		b,
+		adder_b_res,
 		adder_b_done
 	);
 
@@ -96,7 +98,7 @@ module montgomery(clk, resetn, start, a, b, m, c, done);
 		1'b0,
 		c_reg,
 		m,
-		c_reg,
+		adder_m_result,
 		adder_m_done
 	)
 
@@ -108,7 +110,7 @@ module montgomery(clk, resetn, start, a, b, m, c, done);
 		1'b0,
 		c_reg,
 		m,
-		c_reg,
+		subtractor_result,
 		subtractor_done
 	)
 	// Next state update
@@ -265,17 +267,8 @@ module montgomery(clk, resetn, start, a, b, m, c, done);
 			c_reg <= {WIDTH{1'd0}};
 			counter <= 12'd0;
 		end
-		else if (cond_add_b) begin
-			if (a[counter]) begin
-
-			end
-			else begin
-
-			end
-		end
-
 		else
-			c <= c;
+			c_reg <= c_reg;
 	end
 
 	assign done = (state==DONE) ? 1'b1 : 1'b0;
