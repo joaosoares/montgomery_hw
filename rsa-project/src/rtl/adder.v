@@ -19,17 +19,17 @@ module adder(
     reg [514:0] reg_result;
     wire [514:0] bitmask_sub;
     reg c;
-    wire [128:0] add_out;
-    wire [128:0] sub_out;
+    wire [104:0] add_out;
+    wire [104:0] sub_out;
     reg [3:0] counter;
     reg done_sig;
     reg in_execution;
     
     // What impact does a 513-bit add operation have on the critical path of the design? 
     
-    assign add_out = a[127:0] + b[127:0] + c;
+    assign add_out = a[103:0] + b[103:0] + c;
     assign inv_b = ~b;
-    assign sub_out = a[127:0] + inv_b[127:0] + c;
+    assign sub_out = a[103:0] + inv_b[103:0] + c;
        
     always @(posedge clk, negedge resetn) begin
         if (resetn==1'b0)
@@ -58,27 +58,27 @@ module adder(
             begin
                 if (counter != 4) begin
                     if (subtract == 1'b0) begin
-                        reg_result <= {add_out[127:0], reg_result[513:128]};
-                        c <= add_out[128];
+                        reg_result <= {add_out[103:0], reg_result[513:104]};
+                        c <= add_out[104];
                     end
                     else begin
-                        reg_result <= {sub_out[127:0], reg_result[513:128]};
-                        c <= sub_out[128];
+                        reg_result <= {sub_out[103:0], reg_result[513:104]};
+                        c <= sub_out[104];
                     end
                 end
                 else begin
                     if (subtract == 1'b0) begin
-                        reg_result <= {add_out[2:0], reg_result[513:2]};
-                        c <= add_out[3];
+                        reg_result <= {add_out[98:0], reg_result[513:98]};
+                        c <= add_out[99];
                     end
                     else begin
-                        reg_result <= {sub_out[2:0], reg_result[513:2]};
-                        c <= sub_out[3];
+                        reg_result <= {sub_out[98:0], reg_result[513:98]};
+                        c <= sub_out[99];
                     end
                 end
                
-                a <= a>>128;
-                b <= b>>128;
+                a <= a>>104;
+                b <= b>>104;
                 if (counter == 4)
                     done_sig <= 1;
                 else

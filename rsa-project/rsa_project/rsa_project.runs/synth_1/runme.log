@@ -14,12 +14,392 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27324 
-ERROR: [Synth 8-2715] syntax error near LOOP_SHIFT [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:261]
-INFO: [Synth 8-2350] module montgomery ignored due to previous errors [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:25]
-Failed to read verilog '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v'
+INFO: Helper process launched with PID 3551 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1151.387 ; gain = 164.137 ; free physical = 683 ; free virtual = 19980
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'hweval_montgomery' [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/hweval_montgomery.v:3]
+INFO: [Synth 8-638] synthesizing module 'montgomery' [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:25]
+	Parameter WIDTH bound to: 512 - type: integer 
+	Parameter START bound to: 0 - type: integer 
+	Parameter LOOP_START bound to: 1 - type: integer 
+	Parameter LOOP_ADD_B bound to: 2 - type: integer 
+	Parameter LOOP_ADD_B_WAIT bound to: 3 - type: integer 
+	Parameter LOOP_ADD_B_RESULT bound to: 4 - type: integer 
+	Parameter LOOP_ADD_M bound to: 5 - type: integer 
+	Parameter LOOP_ADD_M_WAIT bound to: 6 - type: integer 
+	Parameter LOOP_ADD_M_RESULT bound to: 7 - type: integer 
+	Parameter LOOP_SHIFT bound to: 8 - type: integer 
+	Parameter CHECK_SUB_COND bound to: 9 - type: integer 
+	Parameter SUB_COND bound to: 10 - type: integer 
+	Parameter SUB_COND_WAIT bound to: 11 - type: integer 
+	Parameter DONE bound to: 12 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'adder' [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v:3]
+INFO: [Synth 8-256] done synthesizing module 'adder' (1#1) [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v:3]
+INFO: [Synth 8-256] done synthesizing module 'montgomery' (2#1) [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:25]
+WARNING: [Synth 8-689] width (512) of port connection 'result' does not match port width (514) of module 'montgomery' [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/hweval_montgomery.v:24]
+INFO: [Synth 8-256] done synthesizing module 'hweval_montgomery' (3#1) [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/hweval_montgomery.v:3]
+WARNING: [Synth 8-3331] design adder has unconnected port shift
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1191.832 ; gain = 204.582 ; free physical = 641 ; free virtual = 19939
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1191.832 ; gain = 204.582 ; free physical = 641 ; free virtual = 19938
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Sourcing Tcl File [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/constraints/constraints.tcl]
+Constraints for hw_evals
+INFO: [Vivado 12-1808] Property 'PACKAGE_PIN' is not supported for elaborated designs for objects of type 'port'. [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/constraints/constraints.tcl:7]
+Finished Sourcing Tcl File [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/constraints/constraints.tcl]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1548.332 ; gain = 1.000 ; free physical = 439 ; free virtual = 19737
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1548.336 ; gain = 561.086 ; free physical = 437 ; free virtual = 19735
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1548.340 ; gain = 561.090 ; free physical = 437 ; free virtual = 19735
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1548.340 ; gain = 561.090 ; free physical = 437 ; free virtual = 19735
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "done_sig" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'montgomery'
+INFO: [Synth 8-5544] ROM "done" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "start_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "shift_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_sub_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "should_resetn_sub" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_add_m" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "should_resetn_madd" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_add_b" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "should_resetn_badd" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   START |                             0000 |                             0000
+              LOOP_START |                             0001 |                             0001
+              LOOP_ADD_B |                             0010 |                             0010
+         LOOP_ADD_B_WAIT |                             0011 |                             0011
+       LOOP_ADD_B_RESULT |                             0100 |                             0100
+              LOOP_ADD_M |                             0101 |                             0101
+         LOOP_ADD_M_WAIT |                             0110 |                             0110
+       LOOP_ADD_M_RESULT |                             0111 |                             0111
+              LOOP_SHIFT |                             1000 |                             1000
+          CHECK_SUB_COND |                             1001 |                             1001
+                SUB_COND |                             1010 |                             1010
+           SUB_COND_WAIT |                             1011 |                             1011
+                    DONE |                             1100 |                             1100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'montgomery'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1548.340 ; gain = 561.090 ; free physical = 431 ; free virtual = 19729
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    105 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 3     
++---XORs : 
+	   2 Input    512 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	              515 Bit    Registers := 3     
+	              514 Bit    Registers := 7     
+	              512 Bit    Registers := 5     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input    515 Bit        Muxes := 9     
+	   2 Input    514 Bit        Muxes := 12    
+	   2 Input      4 Bit        Muxes := 3     
+	  22 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 35    
+	   9 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module hweval_montgomery 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input    512 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	              512 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
+Module adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    105 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	              515 Bit    Registers := 1     
+	              514 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    515 Bit        Muxes := 3     
+	   2 Input    514 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+Module montgomery 
+Detailed RTL Component Info : 
++---Registers : 
+	              514 Bit    Registers := 1     
+	              512 Bit    Registers := 2     
++---Muxes : 
+	   2 Input    514 Bit        Muxes := 3     
+	  22 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   9 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1548.340 ; gain = 561.090 ; free physical = 431 ; free virtual = 19729
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design adder has unconnected port shift
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1548.340 ; gain = 561.090 ; free physical = 431 ; free virtual = 19728
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1548.340 ; gain = 561.090 ; free physical = 431 ; free virtual = 19728
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (reg_result_reg[514]) is unused and will be removed from module adder.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (montgomery_instance/adder_m/\b_reg[512] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (montgomery_instance/adder_m/\b_reg[513] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (montgomery_instance/subtractor/\b_reg[512] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (montgomery_instance/subtractor/\b_reg[513] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (montgomery_instance/adder_b/\b_reg[512] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (montgomery_instance/adder_b/\b_reg[513] )
+WARNING: [Synth 8-3332] Sequential element (b_reg[513]) is unused and will be removed from module adder__1.
+WARNING: [Synth 8-3332] Sequential element (b_reg[512]) is unused and will be removed from module adder__1.
+WARNING: [Synth 8-3332] Sequential element (b_reg[513]) is unused and will be removed from module adder__2.
+WARNING: [Synth 8-3332] Sequential element (b_reg[512]) is unused and will be removed from module adder__2.
+WARNING: [Synth 8-3332] Sequential element (b_reg[513]) is unused and will be removed from module adder.
+WARNING: [Synth 8-3332] Sequential element (b_reg[512]) is unused and will be removed from module adder.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1557.637 ; gain = 570.387 ; free physical = 342 ; free virtual = 19637
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1557.637 ; gain = 570.387 ; free physical = 342 ; free virtual = 19637
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+Reading /tmp/.Xil_r0692167/Vivado-3534-pc-klas3-13.esat.kuleuven.be/realtime/hweval_montgomery_synth.xdc
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1590.645 ; gain = 603.395 ; free physical = 306 ; free virtual = 19601
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1620.652 ; gain = 633.402 ; free physical = 277 ; free virtual = 19572
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 234 ; free virtual = 19529
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 234 ; free virtual = 19529
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 234 ; free virtual = 19529
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop montgomery_instance/subtractor/b_reg[0] is being inverted and renamed to montgomery_instance/subtractor/b_reg[0]_inv.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 234 ; free virtual = 19529
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 234 ; free virtual = 19529
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 233 ; free virtual = 19528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 233 ; free virtual = 19528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 233 ; free virtual = 19528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 233 ; free virtual = 19528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   192|
+|3     |LUT1   |  1551|
+|4     |LUT2   |   946|
+|5     |LUT3   |  3157|
+|6     |LUT4   |  2118|
+|7     |LUT5   |   525|
+|8     |LUT6   |   149|
+|9     |MUXF7  |    68|
+|10    |MUXF8  |    33|
+|11    |FDCE   |  4644|
+|12    |FDPE   |     1|
+|13    |FDRE   |  3068|
+|14    |FDSE   |    24|
+|15    |IBUF   |     2|
+|16    |OBUF   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------------+-----------+------+
+|      |Instance              |Module     |Cells |
++------+----------------------+-----------+------+
+|1     |top                   |           | 16480|
+|2     |  montgomery_instance |montgomery | 13400|
+|3     |    adder_b           |adder      |  4277|
+|4     |    adder_m           |adder_0    |  3260|
+|5     |    subtractor        |adder_1    |  3252|
++------+----------------------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1664.707 ; gain = 677.457 ; free physical = 233 ; free virtual = 19528
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1664.707 ; gain = 228.816 ; free physical = 233 ; free virtual = 19528
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1664.715 ; gain = 677.465 ; free physical = 235 ; free virtual = 19530
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 194 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
 INFO: [Common 17-83] Releasing license: Synthesis
-3 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 29 16:42:59 2017...
+45 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1664.715 ; gain = 597.910 ; free physical = 235 ; free virtual = 19530
+report_utilization: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1696.730 ; gain = 0.000 ; free physical = 234 ; free virtual = 19530
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 29 17:33:51 2017...
