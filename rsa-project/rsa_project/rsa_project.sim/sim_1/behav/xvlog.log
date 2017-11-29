@@ -2,7 +2,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/
 INFO: [VRFC 10-311] analyzing module adder
 INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module montgomery
-INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:103]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_montgomery
 INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib

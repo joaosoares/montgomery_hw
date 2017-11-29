@@ -23,6 +23,7 @@ module adder(
     wire [128:0] sub_out;
     reg [3:0] counter;
     reg done_sig;
+    reg in_execution;
     
     // What impact does a 513-bit add operation have on the critical path of the design? 
     
@@ -30,7 +31,7 @@ module adder(
     assign inv_b = ~b;
     assign sub_out = a[127:0] + inv_b[127:0] + c;
        
-    always @(posedge clk) begin
+    always @(posedge clk, negedge resetn) begin
         if (resetn==1'b0)
         begin
             reg_result <= 0;
@@ -39,6 +40,7 @@ module adder(
             b <= 0;
             counter <= 0;
             done_sig <= 0;
+            in_execution <= 0;
         end
         else
         begin
@@ -50,8 +52,9 @@ module adder(
                 counter <= 0;
                 done_sig <= 0;
                 c <= subtract;
+                in_execution <= 1;
             end
-            else
+            else if (in_execution == 1'b1)
             begin
                 if (counter != 4) begin
                     if (subtract == 1'b0) begin

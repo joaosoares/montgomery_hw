@@ -40,19 +40,26 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 	// Declare states
 	parameter START = 0,
 	LOOP_START = 1,
-	LOOP_START_WAIT = 2,
-	LOOP_ADD_M = 3,
-	LOOP_ADD_M_WAIT = 4,
-	LOOP_SHIFT = 5,
-	SUB_COND = 6,
-	SUB_COND_WAIT = 7,
-	DONE = 8;
+	LOOP_ADD_B = 2,
+	LOOP_ADD_B_WAIT = 3,
+	LOOP_ADD_B_RESULT = 4,
+	LOOP_ADD_M = 5,
+	LOOP_ADD_M_WAIT = 6,
+	LOOP_ADD_M_RESULT = 7,
+	LOOP_SHIFT = 8,
+	CHECK_SUB_COND = 9,
+	SUB_COND = 10,
+	SUB_COND_WAIT = 11,
+	DONE = 12;
 
 	// Datapath control in signals
 	wire c0,
 	adder_b_done,
 	adder_m_done,
 	subtractor_done,
+	resetn_badd,
+	resetn_madd,
+	resetn_sub,
 	cur_a;
 
 	// Datapath control out signals
@@ -61,9 +68,9 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 	cond_add_m,
 	shift_c,
 	cond_sub_c,
-	should_add_b,
-	should_add_m,
-	should_subtract;
+    should_resetn_badd,
+    should_resetn_madd,
+    should_resetn_sub;
 
 	// Wires
 	// Temporary registers
@@ -75,7 +82,7 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 
 	adder adder_b(
 		clk,
-		resetn,
+		resetn_badd,
 		cond_add_b,
 		1'b0,
 		1'b0,
@@ -87,7 +94,7 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 
 	adder adder_m(
 		clk,
-		resetn,
+		resetn_madd,
 		cond_add_m,
 		1'b0,
 		1'b0,
@@ -99,8 +106,8 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 
 	adder subtractor(
 		clk,
-		resetn,
-		cond_sub_s,
+		resetn_sub,
+		cond_sub_c,
 		1'b1,
 		1'b0,
 		c_reg,
@@ -128,26 +135,32 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 				cond_add_m <= 1'b0;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b0;
 			end
-			LOOP_START:
+			LOOP_ADD_B:
 			begin // Idle state; Here the FSM waits for the start signal
 				start_c <= 1'b0;
 				cond_add_b <= 1'b1;
 				cond_add_m <= 1'b0;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b0;
 			end
-			LOOP_START_WAIT:
-			begin // Idle state; Here the FSM waits for the start signal
-				start_c <= 1'b0;
-				cond_add_b <= 1'b0;
-				cond_add_m <= 1'b0;
-				shift_c <= 1'b0;
-				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
-			end
+            LOOP_ADD_B_RESULT:
+            begin // Idle state; Here the FSM waits for the start signal
+                start_c <= 1'b0;
+                cond_add_b <= 1'b1;
+                cond_add_m <= 1'b0;
+                shift_c <= 1'b0;
+                cond_sub_c <= 1'b0;
+                should_resetn_badd <= 1'b1;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b0;
+            end
 			LOOP_ADD_M:
 			begin // Idle state; Here the FSM waits for the start signal
 				start_c <= 1'b0;
@@ -155,16 +168,20 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 				cond_add_m <= 1'b1;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b0;
 			end
-			LOOP_ADD_M_WAIT:
+			LOOP_ADD_M_RESULT:
 			begin // Idle state; Here the FSM waits for the start signal
 				start_c <= 1'b0;
 				cond_add_b <= 1'b0;
-				cond_add_m <= 1'b0;
+				cond_add_m <= 1'b1;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b1;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b1;
+                should_resetn_sub <= 1'b0;
 			end
 			LOOP_SHIFT:
 			begin // Idle state; Here the FSM waits for the start signal
@@ -173,7 +190,9 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 				cond_add_m <= 1'b0;
 				shift_c <= 1'b1;
 				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b0;
 			end
 			SUB_COND:
 			begin // Idle state; Here the FSM waits for the start signal
@@ -182,16 +201,9 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 				cond_add_m <= 1'b0;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b1;
-				should_add_m <= 1'b0;
-			end
-			SUB_COND_WAIT:
-			begin // Idle state; Here the FSM waits for the start signal
-				start_c <= 1'b0;
-				cond_add_b <= 1'b0;
-				cond_add_m <= 1'b0;
-				shift_c <= 1'b0;
-				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b0;
 			end
 			DONE:
 			begin // Idle state; Here the FSM waits for the start signal
@@ -200,7 +212,9 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 				cond_add_m <= 1'b0;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b1;
 			end
 			default: begin
 				start_c <= 1'b0;
@@ -208,7 +222,9 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 				cond_add_m <= 1'b0;
 				shift_c <= 1'b0;
 				cond_sub_c <= 1'b0;
-				should_add_m <= 1'b0;
+                should_resetn_badd <= 1'b0;
+                should_resetn_madd <= 1'b0;
+                should_resetn_sub <= 1'b0;
 			end
 		endcase
 	end
@@ -224,32 +240,47 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 					nextstate <= START;
 			end
 			LOOP_START: begin
-				nextstate <= LOOP_START_WAIT;
+			    if(cur_a == 1'b1) 
+				    nextstate <= LOOP_ADD_B;
+				else
+				    nextstate <= LOOP_ADD_B_RESULT;
 			end
-			LOOP_START_WAIT: begin
+			LOOP_ADD_B:
+			     nextstate <= LOOP_ADD_B_WAIT;
+			LOOP_ADD_B_WAIT: begin
 				if (!adder_b_done)
-					nextstate <= LOOP_START_WAIT;
+					nextstate <= LOOP_ADD_B_WAIT;
 				else begin
-					if (c0 == 0)
-						nextstate <= LOOP_SHIFT;
-					else
-						nextstate <= LOOP_ADD_M;
+					nextstate <= LOOP_ADD_B_RESULT;
 				end
 			end
+			LOOP_ADD_B_RESULT: begin
+			     if (c0 == 0)
+			         nextstate <= LOOP_ADD_M_RESULT;
+			     else
+			         nextstate <= LOOP_ADD_M;
+			end
 			LOOP_ADD_M:
-			nextstate <= LOOP_ADD_M_WAIT;
+				nextstate <= LOOP_ADD_M_WAIT;
 			LOOP_ADD_M_WAIT: begin
 				if(!adder_m_done)
 					nextstate <= LOOP_ADD_M_WAIT;
 				else
-					nextstate <= LOOP_SHIFT;
+					nextstate <= LOOP_ADD_M_RESULT;
 			end
+			LOOP_ADD_M_RESULT:
+				nextstate <= LOOP_SHIFT;
 			LOOP_SHIFT: begin
 				if (counter < WIDTH-1)
 					nextstate <= LOOP_START;
 				else
-					nextstate <= SUB_COND;
+					nextstate <= CHECK_SUB_COND;
 			end
+			CHECK_SUB_COND:
+				if (c_reg >= m_reg)
+					nextstate <= SUB_COND;
+				else
+					nextstate <= DONE;
 			SUB_COND:
 			nextstate <= SUB_COND_WAIT;
 			SUB_COND_WAIT: begin
@@ -279,25 +310,19 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 			c_reg <= c_reg >> 1;
 			// Increment counter
 			counter <= counter + 1;
-			// Drive down should_add_b
-			should_add_b <= 0;
 		end
-		else if (adder_b_done && should_add_b) begin
+		else if (adder_b_done) begin
 			c_reg <= adder_b_res;
 		end
-		else if (adder_m_done && should_add_m) begin
+		else if (adder_m_done) begin
 			c_reg <= adder_m_res;
+		end
+		else if (subtractor_done) begin
+			c_reg <= subtractor_res;
 		end
 		else
 			c_reg <= c_reg;
 
-		if (cond_add_b) begin
-			should_add_b <= cur_a;
-		end
-
-		if (cond_sub_c) begin
-			should_subtract <= c_reg >= m_reg;
-		end
 	end
 
 	assign done = (state==DONE) ? 1'b1 : 1'b0;
@@ -305,5 +330,9 @@ module montgomery(clk, resetn, start, in_a, in_b, in_m, result, done);
 	assign c0 = c_reg[0];
 	assign result = c_reg;
 	
+	// Reset for adders
+	assign resetn_badd = resetn && ~should_resetn_badd;
+	assign resetn_madd = resetn && ~should_resetn_madd;
+	assign resetn_sub  = resetn && ~should_resetn_sub;
 endmodule
 

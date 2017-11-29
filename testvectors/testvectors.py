@@ -56,10 +56,12 @@ if operation == 2:
 if operation == 3:
   print "Test Vector for Montgomery Multiplication\n"
 
-  A = helpers.getRandomInt(512)
-  B = helpers.getRandomInt(512)
-  M = helpers.getModulus(512)
-  C = HW.MontMul_512(A, B, M)
+  # A = helpers.getRandomInt(512)
+  # B = helpers.getRandomInt(512)
+  A = 0xb4d6d951f6532ac13ec6a44addbb552b3eca8fef9a81a1fd095485063c7ee4f89dcf19acf884fa9d0b6ce9c148e6b85af88024189c1da60e534acc6c7969363b
+  B = 0x86eb6f8babc25f0986ba7460e46ffd91f34532c114485075f85ff900d4cf71d918be9ef170e1b84bca67755131efcbb767a2e069ad68c321a1cb985909098399
+  M = 0x7e93fee7fd5d369339166e57cf5f773c1698c44b91a9f9a4be462bee6a82552d982845cd2787e90bc0245b4e781b9e1be10c615e2c814b3d85b78e358fa2c393
+  C = HW.MontMulModified_512(A, B, M)
   D = (A*B*helpers.Modinv(2**512,M)) % M
   e = C - D
   

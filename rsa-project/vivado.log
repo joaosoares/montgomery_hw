@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Nov 15 16:11:30 2017
-# Process ID: 3490
+# Start of session at: Wed Nov 29 16:08:07 2017
+# Process ID: 22056
 # Current directory: /users/students/r0692167/Documents/DDP/multiplier/rsa-project
 # Command line: vivado rsa_project/rsa_project.xpr -tempDir /tmp
 # Log file: /users/students/r0692167/Documents/DDP/multiplier/rsa-project/vivado.log
@@ -11,17 +11,13 @@
 #-----------------------------------------------------------
 start_gui
 open_project rsa_project/rsa_project.xpr
-INFO: [Project 1-313] Project file moved from '/users/students/r0692167/Downloads/multiplier/rsa-project/rsa_project' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/data/ip'.
-open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 5962.113 ; gain = 113.652 ; free physical = 4636 ; free virtual = 22570
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 5970.758 ; gain = 134.777 ; free physical = 3222 ; free virtual = 22400
 update_compile_order -fileset sources_1
-set_property top tb_montgomery [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
 launch_simulation
 INFO: [USF-XSim-27] Simulation object is 'sim_1'
 INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
@@ -30,6 +26,11 @@ INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
 xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:103]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_montgomery
 INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
@@ -42,14 +43,857 @@ Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
 Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-ERROR: [VRFC 10-2063] Module <montgomery> not found while processing module instance <montgomery_instance> [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:20]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-99] Step results log file:'/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/elaborate.log' file for more information.
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:12:17 2017...
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 5972.758 ; gain = 0.000 ; free physical = 3063 ; free virtual = 22407
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 6156.125 ; gain = 183.367 ; free physical = 2979 ; free virtual = 22343
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:103]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:14:12 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:103]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:16:27 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:103]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:21:30 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:109]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:29:30 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:109]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:36:46 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:109]
+ERROR: [VRFC 10-1412] syntax error near LOOP_SHIFT [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:261]
+ERROR: [VRFC 10-1040] module montgomery ignored due to previous errors [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:25]
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xvlog.log' file for more information.
 ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 5966.113 ; gain = 2.000 ; free physical = 4578 ; free virtual = 22557
 ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-set_property top hweval_montgomery [current_fileset]
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library work [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:1]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "LOOP_SHIFT". [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:261]
+[Wed Nov 29 16:42:46 2017] Launched synth_1...
+Run output will be captured here: /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.runs/synth_1/runme.log
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:109]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:43:57 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 60000 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 60000 ns
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:109]
+ERROR: [VRFC 10-91] CHECK_SUB_COND is not declared [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:265]
+ERROR: [VRFC 10-91] CHECK_SUB_COND is not declared [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:267]
+ERROR: [VRFC 10-1040] module montgomery ignored due to previous errors [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:25]
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:110]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:51:28 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 60000 ns
+result calculated=949031c785e1767b10ba755667f53317d8d5f1a90f417270509b2b297fbcb536f7e61b05ced28916eba6fedb32920cabbece7750fb6a1a21c943b46b9dad43f9
+result expected  =949031c785e1767b10ba755667f53317d8d5f1a90f417270509b2b297fbcb536f7e61b05ced28916eba6fedb32920cabbece7750fb6a1a21c943b46b9dad43f9
+error            =00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+$finish called at time : 55465 ns : File "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" Line 64
+run 4000 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:110]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:54:39 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 60000 ns
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2458] undeclared symbol cond_sub_s, assumed default net type wire [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v:110]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:56:40 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 60000 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 16:58:33 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 55000 ns
+result calculated=b91368781dc909f424f131456ef4cd38e70b04cebd6fb2cc1f555389eabc8ae3bbf570d6ee5e4e1695859dc07805ca8c12167f9e41c53e4456812873565b540b
+result expected  =3a7f6990206bd360ebdac2ed9f9555fcd07240832bc5b927610f279b803a35b623cd2b09c6d6650ad5614271ffea2c70310a1e401543f306d0c99a3dc6b89078
+error            =816c011802a2c96cc6e991a830a088c3e9673bb46e56065b41b9d411957daad267d7ba32d87816f43fdba4b187e461e41ef39ea1d37eb4c27a4871ca705d3c6d
+$finish called at time : 55605 ns : File "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" Line 64
+run 2000 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_montgomery' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+xvlog -m64 --relax -prj tb_montgomery_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_montgomery
+INFO: [VRFC 10-2263] Analyzing Verilog file "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab -wto 917798f55d0047e7b0ce8dc2685263eb --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_montgomery_behav xil_defaultlib.tb_montgomery xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 514 for port result [/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v:26]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.montgomery
+Compiling module xil_defaultlib.tb_montgomery
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_montgomery_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav/xsim.dir/tb_montgomery_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 17:00:05 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/rsa_project.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_montgomery_behav -key {Behavioral:sim_1:Functional:tb_montgomery} -tclbatch {tb_montgomery.tcl} -view {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_montgomery_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 55000 ns
+result calculated=b91368781dc909f424f131456ef4cd38e70b04cebd6fb2cc1f555389eabc8ae3bbf570d6ee5e4e1695859dc07805ca8c12167f9e41c53e4456812873565b540b
+result expected  =3a7f6990206bd360ebdac2ed9f9555fcd07240832bc5b927610f279b803a35b623cd2b09c6d6650ad5614271ffea2c70310a1e401543f306d0c99a3dc6b89078
+error            =816c011802a2c96cc6e991a830a088c3e9673bb46e56065b41b9d411957daad267d7ba32d87816f43fdba4b187e461e41ef39ea1d37eb4c27a4871ca705d3c6d
+$finish called at time : 55605 ns : File "/users/students/r0692167/Documents/DDP/multiplier/rsa-project/src/rtl/tb_montgomery.v" Line 64
+run 2000 ns

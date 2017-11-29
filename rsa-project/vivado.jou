@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Nov 15 16:11:30 2017
-# Process ID: 3490
+# Start of session at: Wed Nov 29 16:08:07 2017
+# Process ID: 22056
 # Current directory: /users/students/r0692167/Documents/DDP/multiplier/rsa-project
 # Command line: vivado rsa_project/rsa_project.xpr -tempDir /tmp
 # Log file: /users/students/r0692167/Documents/DDP/multiplier/rsa-project/vivado.log
@@ -12,18 +12,72 @@
 start_gui
 open_project rsa_project/rsa_project.xpr
 update_compile_order -fileset sources_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_montgomery [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
 launch_simulation
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top hweval_montgomery [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+close_sim
+launch_simulation
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+run 60000 ns
+restart
+run 60000 ns
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+run 60000 ns
+run 4000 ns
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+run 60000 ns
+save_wave_config {/users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+run 60000 ns
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+run 55000 ns
+run 2000 ns
+close_sim
+launch_simulation
+open_wave_config /users/students/r0692167/Documents/DDP/multiplier/rsa-project/rsa_project/tb_montgomery_behav.wcfg
+source tb_montgomery.tcl
+run 55000 ns
+run 2000 ns

@@ -30,6 +30,19 @@ def MontMul_512(A, B, M):
         C = MultiPrecisionAdd(C, M, "sub")
     return C
 
+def MontMulModified_512(A, B, M):
+    # Returns (A*B*Modinv(R,M)) mod M
+    C = 0
+    for i in range(0,512):
+        # import pdb; pdb.set_trace()
+        C = MultiPrecisionAdd(C, helpers.bit(A,i)*B, "add")
+        if (C % 2) != 0:
+            C = MultiPrecisionAdd(C, M, "add")
+        C = C / 2
+    while C >= M:
+        C = MultiPrecisionAdd(C, M, "sub")
+    return C
+
 def MontExp_512(X, E, M):
     # Returns (X^E) mod M
     R  = 2**512
